@@ -1,5 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import NameTag from './NameTag';
 
 import "./styles.css";
 
