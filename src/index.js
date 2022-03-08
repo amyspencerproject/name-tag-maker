@@ -1,18 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import NameTag from './NameTag';
+import {names} from './data'
 
 import "./styles.css";
 
-const App = () => (
-  <div className="App">
-    <h1>Name Tag Generator</h1>
-    <NameTag name="Erin" />
-    <NameTag name="Jake" />
-    <NameTag name="Sarah" />
-    <NameTag name="Burt" />
-  </div>
+const renderName = (name) => (
+  <NameTag key={name.id} name={name.person} />
 );
+
+const App = () => {
+  const nameTagElements = names.map(renderName);
+
+  return (
+    <div classname="App">
+    <h1>Name Tag Generator</h1>
+    {NameTagElements}
+    </div>
+  );
+};
+
+
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
